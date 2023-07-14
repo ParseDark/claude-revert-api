@@ -2,7 +2,7 @@ import axios from "axios";
 
 type IResponse = {};
 
-interface IRequest {
+interface IRequest extends IBaseRequest {
   organization_uuid: organizationType;
   conversation_uuid: conversationType;
   sessionKey: string;
@@ -20,7 +20,7 @@ export async function renameConversationSDK(
   const res = axios.request<any, IResponse>({
     method: "post",
     maxBodyLength: Infinity,
-    url: `https://claude.ai/api/rename_chat`,
+    url: `${payload.baseURL}/api/rename_chat`,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/113.0",

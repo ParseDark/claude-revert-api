@@ -1,17 +1,17 @@
 import axios from "axios";
 
-interface IMetadata {
+export interface IMetadata {
   organization_uuid: string;
   conversation_uuid: string;
 }
 
-interface IRequest {
+interface IRequest extends IBaseRequest {
   sessionKey: string;
   prompt: string;
   metadata: IMetadata;
 }
 
-interface IResponse {
+export interface IResponse {
   done: boolean;
   message: string;
 }
@@ -36,7 +36,7 @@ export async function appendMessageSDK(payload: IRequest): Promise<IResponse> {
   const res = await axios.request<any, IResponse>({
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://claude.ai/api/append_message",
+    url: `${payload.baseURL}/api/append_message`,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/113.0",

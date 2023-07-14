@@ -32,3 +32,7 @@ interface conversationItem {
   updated_at: string;
 }
 type conversationList = conversationItem[];
+
+interface IBaseRequest {
+  baseURL?: string;
+}
