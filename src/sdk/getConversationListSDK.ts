@@ -13,7 +13,7 @@ export async function conversationListSDK(
   const res = axios.request<any, IResponse>({
     method: "get",
     maxBodyLength: Infinity,
-    url: `${payload.baseURL}/organizations/${payload.organization_uuid}/chat_conversations`,
+    url: `${payload.baseURL}/api/organizations/${payload.organization_uuid}/chat_conversations`,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/113.0",
