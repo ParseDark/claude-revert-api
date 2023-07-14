@@ -9,7 +9,9 @@ interface IRequest {
   title: string;
 }
 
-async function renameConversationSDK(payload: IRequest): Promise<IResponse> {
+export async function renameConversationSDK(
+  payload: IRequest
+): Promise<IResponse> {
   const data = {
     title: payload.title,
     organization_uuid: payload.organization_uuid,
@@ -29,5 +31,3 @@ async function renameConversationSDK(payload: IRequest): Promise<IResponse> {
 
   return res;
 }
-
-export default renameConversationSDK;

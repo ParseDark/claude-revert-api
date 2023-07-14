@@ -31,7 +31,7 @@ const createPayload = (payload: IRequest) => {
   return newPayload;
 };
 
-async function appendMessageSDK(payload: IRequest): Promise<IResponse> {
+export async function appendMessageSDK(payload: IRequest): Promise<IResponse> {
   const data = createPayload(payload);
   const res = await axios.request<any, IResponse>({
     method: "post",
@@ -49,5 +49,3 @@ async function appendMessageSDK(payload: IRequest): Promise<IResponse> {
 
   return res;
 }
-
-export default appendMessageSDK;

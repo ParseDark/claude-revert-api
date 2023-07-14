@@ -1,14 +1,14 @@
-import * as createConversationSDK from "./createConversationSDK";
-import * as appendMessageSDK from "./appendMessageSDK";
-import * as getConversationListSDK from "./getConversationListSDK";
-import * as deleteConversationSDK from "./deleteConversationSDK";
-import * as getConversationSDK from "./getConversationSDK";
-import * as renameConversationSDK from "./renameConversationSDK";
+import { createConversationSDK } from "./createConversationSDK";
+import { appendMessageSDK } from "./appendMessageSDK";
+import { conversationListSDK } from "./getConversationListSDK";
+import { deleteConversationSDK } from "./deleteConversationSDK";
+import { getConversationSDK } from "./getConversationSDK";
+import { renameConversationSDK } from "./renameConversationSDK";
 
 export {
   createConversationSDK,
   appendMessageSDK,
-  getConversationListSDK,
+  conversationListSDK,
   deleteConversationSDK,
   getConversationSDK,
   renameConversationSDK,

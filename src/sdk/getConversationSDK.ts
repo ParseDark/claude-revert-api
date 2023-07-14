@@ -15,7 +15,9 @@ interface IRequest {
   conversation_uuid: conversationType;
 }
 
-async function getConversationSDK(payload: IRequest): Promise<IResponse> {
+export async function getConversationSDK(
+  payload: IRequest
+): Promise<IResponse> {
   const res = axios.request<any, IResponse>({
     method: "get",
     maxBodyLength: Infinity,
@@ -29,5 +31,3 @@ async function getConversationSDK(payload: IRequest): Promise<IResponse> {
 
   return res;
 }
-
-export default getConversationSDK;

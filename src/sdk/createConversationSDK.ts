@@ -14,7 +14,9 @@ interface IRequest {
   name?: string;
 }
 
-async function createConversationSDK(payload: IRequest): Promise<IResponse> {
+export async function createConversationSDK(
+  payload: IRequest
+): Promise<IResponse> {
   const data = { name: payload.name, uuid: payload.uuid };
   const res = axios.request<any, IResponse>({
     method: "post",
@@ -30,5 +32,3 @@ async function createConversationSDK(payload: IRequest): Promise<IResponse> {
 
   return res;
 }
-
-export default createConversationSDK;

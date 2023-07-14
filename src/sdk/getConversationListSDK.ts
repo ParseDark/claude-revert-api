@@ -1,3 +1,4 @@
+// import axios from "../lib/axios";
 import axios from "axios";
 
 type IResponse = conversationList;
@@ -7,11 +8,13 @@ interface IRequest {
   sessionKey: string;
 }
 
-async function conversationListSDK(payload: IRequest): Promise<IResponse> {
+export async function conversationListSDK(
+  payload: IRequest
+): Promise<IResponse> {
   const res = axios.request<any, IResponse>({
     method: "get",
     maxBodyLength: Infinity,
-    url: `https://claude.ai/api/organizations/${payload.organization_uuid}/chat_conversations`,
+    url: `/organizations/${payload.organization_uuid}/chat_conversations`,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/113.0",
@@ -21,5 +24,3 @@ async function conversationListSDK(payload: IRequest): Promise<IResponse> {
 
   return res;
 }
-
-export default conversationListSDK;
