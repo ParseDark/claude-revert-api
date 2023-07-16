@@ -28,7 +28,7 @@ const createPayload = (payload: IRequest) => {
     text: payload.prompt,
   };
 
-  return newPayload;
+  return  JSON.stringify(newPayload);
 };
 
 export function appendMessageSDK(payload: IRequest): Promise<any> {
@@ -44,10 +44,12 @@ export function appendMessageSDK(payload: IRequest): Promise<any> {
       accept: "text/event-stream",
       Cookie: `sessionKey=${payload.sessionKey}`,
     },
-    responseType: 'stream',
+    responseType: "stream",
     data: data,
+    timeout: 0,
   }).then((res) => {
     debugger;
+    console.log(res);
     const { data, status } = res;
     debugger;
     if (status === 200) {
