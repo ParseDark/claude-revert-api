@@ -33,7 +33,7 @@ const createPayload = (payload: IRequest) => {
 
 export async function appendMessageSDK(payload: IRequest) {
   const data = createPayload(payload);
-  axios.request({
+  return axios.request({
     method: "post",
     maxBodyLength: Infinity,
     url: `${payload.baseURL}/api/append_message`,
@@ -48,17 +48,12 @@ export async function appendMessageSDK(payload: IRequest) {
     data: data,
     timeout: 0,
   }).then((res) => {
-    debugger;
     console.log(res);
     const { data, status } = res;
-    debugger;
     if (status === 200) {
-      debugger;
       const stream = data;
       return stream;
     }
-
     return res;
   });
-
 }
