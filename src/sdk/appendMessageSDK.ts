@@ -31,9 +31,9 @@ const createPayload = (payload: IRequest) => {
   return  JSON.stringify(newPayload);
 };
 
-export function appendMessageSDK(payload: IRequest): Promise<any> {
+export async function appendMessageSDK(payload: IRequest) {
   const data = createPayload(payload);
-  return axios.request({
+  axios.request({
     method: "post",
     maxBodyLength: Infinity,
     url: `${payload.baseURL}/api/append_message`,
@@ -53,6 +53,7 @@ export function appendMessageSDK(payload: IRequest): Promise<any> {
     const { data, status } = res;
     debugger;
     if (status === 200) {
+      debugger;
       const stream = data;
       return stream;
     }
