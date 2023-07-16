@@ -1,9 +1,12 @@
 {
   "name": "claude-revert-api",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "revert claude chart api.",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
+  "repository": {
+    "url": "git@github.com:ParseDark/claude-revert-api.git"
+  },
   "scripts": {
     "dev": "father dev",
     "build": "father build",
