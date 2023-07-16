@@ -4,10 +4,21 @@ A wrapper of the claude 2. Basicly use the axios mock a sdk. For my project swit
 Code will be open source. I still test for it.
 If you have more requirement just send email to 3173991952@qq.com or follow my [twitter](https://twitter.com/DarkParse)
 
+And feel free open an issue or PR.
+
 [![NPM version](https://img.shields.io/npm/v/claude-revert-api.svg?style=flat)](https://npmjs.org/package/claude-revert-api)
 [![NPM downloads](http://img.shields.io/npm/dm/claude-revert-api.svg?style=flat)](https://npmjs.org/package/claude-revert-api)
 
 ## Install
+```bash
+// npm 
+npm install claude-revert-api
+
+// pnpm 
+pnpm install claude-revert-api
+```
+
+## Develop
 
 ```bash
 $ pnpm install
@@ -39,18 +50,18 @@ conversationListSDK
 // sessionKey: string;
 // organization_uuid: organizationType;
 // conversation_uuid: conversationType;
-deleteConversationSDK()
+deleteConversationSDK
 //   baseURL?: string
 //   sessionKey: string;
 //   organization_uuid: organizationType;
 //   conversation_uuid: conversationType;
-getConversationSDK()
+getConversationSDK
 // baseURL?: string
 // organization_uuid: organizationType;
 // conversation_uuid: conversationType;
 // sessionKey: string;
 // title: string;
-renameConversationSDK()
+renameConversationSDK
 ```
 
 ## Usage 2: if need to customize the base_url or token
