@@ -31,9 +31,9 @@ const createPayload = (payload: IRequest) => {
   return newPayload;
 };
 
-export async function appendMessageSDK(payload: IRequest): Promise<IResponse> {
+export async function appendMessageSDK(payload: IRequest): Promise<any> {
   const data = createPayload(payload);
-  const res = await axios.request<any, IResponse>({
+  const res = await axios.request({
     method: "post",
     maxBodyLength: Infinity,
     url: `${payload.baseURL}/api/append_message`,
@@ -44,8 +44,16 @@ export async function appendMessageSDK(payload: IRequest): Promise<IResponse> {
       "Content-Type": "application/json",
       Cookie: `sessionKey=${payload.sessionKey}`,
     },
+    responseType: 'stream',
     data: data,
+  
+   
   });
+  if (res.status === 200) {
+    const stream = res.data;
+
+    return stream;
+  }
 
   return res;
 }
