@@ -31,29 +31,31 @@ const createPayload = (payload: IRequest) => {
   return newPayload;
 };
 
-export async function appendMessageSDK(payload: IRequest): Promise<any> {
+export function appendMessageSDK(payload: IRequest): Promise<any> {
   const data = createPayload(payload);
-  const res = await axios.request({
+  return axios.request({
     method: "post",
     maxBodyLength: Infinity,
     url: `${payload.baseURL}/api/append_message`,
     headers: {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/113.0",
-      Accept: "text/event-stream, text/event-stream",
       "Content-Type": "application/json",
+      accept: "text/event-stream",
       Cookie: `sessionKey=${payload.sessionKey}`,
     },
     responseType: 'stream',
     data: data,
-  
-   
+  }).then((res) => {
+    debugger;
+    const { data, status } = res;
+    debugger;
+    if (status === 200) {
+      const stream = data;
+      return stream;
+    }
+
+    return res;
   });
-  if (res.status === 200) {
-    const stream = res.data;
 
-    return stream;
-  }
-
-  return res;
 }

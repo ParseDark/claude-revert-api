@@ -1,6 +1,6 @@
 {
   "name": "claude-revert-api",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "revert claude chart api.",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
