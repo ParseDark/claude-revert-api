@@ -21,7 +21,7 @@ pnpm install claude-revert-api
 ## Develop
 
 ```bash
-$ pnpm install
+pnpm install
 ```
 
 ```bash

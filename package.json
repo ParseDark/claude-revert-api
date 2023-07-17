@@ -11,6 +11,7 @@
     "dev": "father dev",
     "build": "father build",
     "build:deps": "father prebundle",
+    "doc": "npx typedoc src/index.ts",
     "prepublishOnly": "father doctor && npm run build"
   },
   "keywords": [],
@@ -27,11 +28,11 @@
   },
   "devDependencies": {
     "@types/uuid": "^9.0.2",
-    "father": "^4.2.3"
+    "father": "^4.2.3",
+    "typedoc": "^0.24.8"
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "socks-proxy-agent": "^8.0.1",
     "uuid": "^9.0.0"
   }
 }
