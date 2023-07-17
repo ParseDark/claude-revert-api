@@ -6,6 +6,9 @@ If you have more requirement just send email to 3173991952@qq.com or follow my [
 
 And feel free open an issue or PR.
 
+Document: https://parsedark.github.io/claude-revert-api/
+
+
 [![NPM version](https://img.shields.io/npm/v/claude-revert-api.svg?style=flat)](https://npmjs.org/package/claude-revert-api)
 [![NPM downloads](http://img.shields.io/npm/dm/claude-revert-api.svg?style=flat)](https://npmjs.org/package/claude-revert-api)
 
