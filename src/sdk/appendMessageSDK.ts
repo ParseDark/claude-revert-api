@@ -47,8 +47,7 @@ export async function appendMessageSDK(payload: IRequest) {
     responseType: "stream",
     data: data,
     timeout: 0,
-  }).then((res) => {
-    console.log(res);
+  }).then((res: any) => {
     const { data, status } = res;
     if (status === 200) {
       const stream = data;
