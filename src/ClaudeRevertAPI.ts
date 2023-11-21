@@ -24,12 +24,17 @@ export class ClaudeRevertAPI {
     });
   }
 
-  appendNewMessage(prompt: string, metadata: IMetadata) {
+  appendNewMessage(
+    prompt: string,
+    metadata: IMetadata,
+    attachments: IAttachment[]
+  ) {
     return appendMessageSDK({
       baseURL: this.baseURL,
       sessionKey: this.sessionKey,
       prompt,
       metadata,
+      attachments,
     });
   }
 
