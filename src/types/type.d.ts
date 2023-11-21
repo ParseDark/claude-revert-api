@@ -8,11 +8,19 @@ interface ICompletion {
   model: string;
 }
 
+interface IAttachment {
+  extracted_content: string;
+  file_name: string;
+  file_size: number;
+  file_type: string;
+}
+
 interface IResourcePayload {
   completion: ICompletion;
   organization_uuid: organizationType;
   conversation_uuid: conversationType;
   text: promptType;
+  attachments: IAttachment[];
 }
 
 interface IChatItem {
